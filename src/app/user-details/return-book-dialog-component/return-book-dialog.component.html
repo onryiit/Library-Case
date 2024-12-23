@@ -1,0 +1,23 @@
+<h1 mat-dialog-title class="mat-dialog-title">Return Book</h1>
+<div mat-dialog-content class="mat-dialog-content">
+  <p>Are you sure you want to return this book?</p>
+
+  <!-- Puanlama için Input Alanı -->
+  <div class="rating-container">
+    <label for="rating">Rate the book (1 to 5):  </label>
+    <input
+    matInput
+      type="number"
+      id="rating"
+      name="rating"
+      [(ngModel)]="rating"
+      min="1"
+      max="5"
+      required
+      (input)="validateRating()">
+  </div>
+</div>
+<div mat-dialog-actions align="end" class="mat-dialog-actions">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onConfirm()">Save</button>
+</div>
