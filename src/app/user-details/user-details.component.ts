@@ -51,7 +51,7 @@ export class UserDetailsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       this.loadUserData();
-      window.location.reload()
+      // window.location.reload()
     });
   }
 }

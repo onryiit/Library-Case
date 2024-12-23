@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { LendBookDialogComponent } from './return-book-dialog-component/lend-book-dialog.component';
+import { LendBookDialogComponent } from './lend-book-dialog-component/lend-book-dialog.component';
 import { UserService } from '../user.service';
 
 @Component({
