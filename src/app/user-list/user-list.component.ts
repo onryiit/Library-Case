@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../user.service';
 
 @Component({
@@ -9,12 +9,27 @@ import { UserService } from '../user.service';
 })
 export class UserListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'date'];
-  dataSource: any;
-  constructor(private userService:UserService) {}
-  ngOnInit(): void {
-    this.userService.getUserList().then((res:any)=>{
-      this.dataSource = res
-    })
+  dataSource: any = [];
 
+  constructor(
+    private userService: UserService,
+    private snackBar: MatSnackBar
+  ) {}
+
+  ngOnInit(): void {
+    this.loadUserList();
+  }
+
+  loadUserList(): void {
+    this.userService.getUserList()
+      .then((res: any) => {
+        this.dataSource = res || [];
+      })
+      .catch((error) => {
+        console.error("Error fetching user list:", error);
+        this.snackBar.open("An error occurred while loading the user list. Please try again later.", "Close", {
+          duration: 5000,
+        });
+      });
   }
 }
