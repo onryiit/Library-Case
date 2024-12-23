@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.mat-dialog-title {
+  text-align: left;
+  background-color: #e0ee91;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+}
+
+.mat-dialog-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.mat-dialog-container {
+  border-radius: 16px;
+}
+
+button {
+  margin-left: 8px;
+}
+
+.rating-container {
+  margin-top: 15px;
+  select {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+}
