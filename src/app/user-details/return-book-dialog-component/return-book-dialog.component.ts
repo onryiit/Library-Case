@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { BookService } from 'src/app/book.service';
 import { UserService } from 'src/app/user.service';
 
 @Component({
@@ -13,11 +14,11 @@ export class ReturnBookDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ReturnBookDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private userService:UserService
+    private userService:UserService,
+    private bookService:BookService
   ) {}
 
   ngOnInit(): void {
-    console.log(this.data)
   }
 
   validateRating(): void {
@@ -33,8 +34,8 @@ export class ReturnBookDialogComponent implements OnInit {
   }
 
   onConfirm(): void {
-    console.log(this.rating)
     this.userService.updateUserById(this.data.userId,this.data.bookId,this.rating)
+    this.bookService.uptadeOwner(this.data.bookId,"")
     this.dialogRef.close();
   }
 }
