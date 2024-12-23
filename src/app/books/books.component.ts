@@ -9,14 +9,19 @@ import { BookService } from '../book.service';
 export class BooksComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'date'];
   dataSource: any;
-  constructor(private bookService:BookService){
+  errorMessage: string | null = null;
 
-  }
+  constructor(private bookService: BookService) { }
+
   ngOnInit(): void {
-    this.bookService.getBookList().then((res:any)=>{
-      this.dataSource = res
-    })
-
+    this.bookService.getBookList()
+      .then((res: any) => {
+        this.dataSource = res || [];
+        this.errorMessage = null;
+      })
+      .catch((error: any) => {
+        console.error('Error fetching book list', error);
+        this.errorMessage = 'Failed to load books. Please try again later.';
+      });
   }
-
 }

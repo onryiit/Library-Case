@@ -31,6 +31,7 @@ import { BookService } from './book.service';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ReturnBookDialogComponent } from './user-details/return-book-dialog-component/return-book-dialog.component';
 import { LendBookDialogComponent } from './books-detailed/lend-book-dialog-component/lend-book-dialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { LendBookDialogComponent } from './books-detailed/lend-book-dialog-compo
     MatPaginatorModule,
     MatMenuModule,
     MatCheckboxModule,
+    MatSnackBarModule,
     MatNativeDateModule,
     MatChipsModule,
     MatTooltipModule,

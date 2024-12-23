@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 
-import { UpperCase } from './upperCasePipe.pipe';
 import { TimeTransform } from './timeTransform.pipe';
 
-
 @NgModule({
-  declarations: [UpperCase,
-    TimeTransform
-  ],
+  declarations: [TimeTransform],
   imports: [],
   providers: [],
   bootstrap: [],
-  exports: [UpperCase,TimeTransform],
+  exports: [TimeTransform],
 })
 export class PipeModule {}

@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ReturnBookDialogComponent } from './return-book-dialog-component/return-book-dialog.component';
 
 @Component({
@@ -12,15 +13,16 @@ import { ReturnBookDialogComponent } from './return-book-dialog-component/return
 export class UserDetailsComponent implements OnInit {
   id: any;
   displayedColumns: string[] = ['id', 'name', 'date', "actions"];
-  dataSource: any;
+  dataSource: any = [];
   displayedColumns2: string[] = ['id', 'name', 'date', "score"];
-  dataSource2: any;
+  dataSource2: any = [];
 
   constructor(
     private userService: UserService,
     private routes: ActivatedRoute,
     private dialog: MatDialog,
-    private cdr :ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private snackBar: MatSnackBar
   ) {
     routes.params.subscribe((params: Params) => {
       this.id = params["id"];
@@ -32,10 +34,17 @@ export class UserDetailsComponent implements OnInit {
   }
 
   loadUserData(): void {
-    this.userService.getUserById(this.id).then((res: any) => {
-      this.dataSource = res.books;
-      this.dataSource2 = res.previouslyBook;
-    });
+    this.userService.getUserById(this.id)
+      .then((res: any) => {
+        this.dataSource = res.books || [];
+        this.dataSource2 = res.previouslyBook || [];
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+        this.snackBar.open("An error occurred while loading user data. Please try again later.", "Close", {
+          duration: 5000,
+        });
+      });
   }
 
   returnTheBook(element: any): void {
@@ -49,9 +58,24 @@ export class UserDetailsComponent implements OnInit {
       data: params
     });
 
-    dialogRef.afterClosed().subscribe(() => {
-      this.loadUserData();
-      // window.location.reload()
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result && result.confirmed) {
+        this.snackBar.open("Book returned successfully!", "Close", {
+          duration: 3000,
+        });
+        this.loadUserData();
+      } else if (result && !result.confirmed) {
+        this.snackBar.open("Book return was canceled.", "Close", {
+          duration: 3000,
+        });
+      } else {
+        console.warn("Dialog closed without any result.");
+      }
+    }, (error) => {
+      console.error("Error after dialog close:", error);
+      this.snackBar.open("An unexpected error occurred.", "Close", {
+        duration: 5000,
+      });
     });
   }
 }
