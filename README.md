@@ -1,28 +1,29 @@
 # Library Controller App
-> **⚠️ Attention:** Before Running this app. Go Library Case API repo(you can find in my repostories) and run it before. Then run this project. Because When you are using this angular project you need API.
 
-## Description For That Application
+## ⚠️ Attention
+Before running this app, go to the **Library Case API** repository (you can find it in my repositories) and run it. This Angular project requires the API to function. 
 
-The purpose of this project is to make a small library application. It is a small Angular project where users and books can be controlled. I used Angular 16.0.4 version in my project. My Node.js version is 16.20.0
+## Description
+This project is a small library application for managing users and books. It is built with Angular version 16.0.4 and Node.js version 16.20.0.
 
-## Technologies Used in the Project
+## Technologies Used
+- **Angular** (Version 16.0.4)
+- **TypeScript**
+- **HTML**
+- **SCSS**
+- **Angular Material UI**
+- **Tailwind**
+- **Webpack**
+- **Firebase Cloud**
+- **REST API**
 
-1. `Angular(Version 16.0.4 )`
-2. `Typescript`
-3. `Html`
-4. `Scss`
-5. `Angular Material UI`
-6. `Tailwind`
-7. `Webpack`
-8. `Firebase Cloud`
-9. `Rest API`
-
-## How we can run This Project ? 
-
-1. Clone this project in your local
-2. Install angular version `16.0.4` and node version `16.20.0`
-3. Open Terminal and run `npm install`
-4. Run `ng serve`
+## How to Run This Project
+1. Clone this repository to your local machine.
+2. Install Angular CLI (v16.0.4) and Node.js (v16.20.0).
+3. Open a terminal and run:
+   ```bash
+   npm install
+   ng serve
 
 > **⚠️ Attention:** You need the use `http://localhost:4200/` this port. If you dont use it, API won't work because of cors.
 
