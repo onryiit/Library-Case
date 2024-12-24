@@ -31,3 +31,4 @@ The purpose of this project is to make a small library application. It is a smal
 ## Ideas for Development
 - [ ] Book adding and user adding pages can be created.
 - [ ] Scss can be improved by making some changes.
+- [ ] Login page can be created.
