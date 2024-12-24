@@ -1,5 +1,5 @@
 # Library Controller App
-> **⚠️ Attention:** Before Running this app. Go Library Case API repo and run it before. Then run this project. Because When you are using this angular project you need API.
+> **⚠️ Attention:** Before Running this app. Go Library Case API repo(you can find in my repostories) and run it before. Then run this project. Because When you are using this angular project you need API.
 
 ## Description For That Application
 
