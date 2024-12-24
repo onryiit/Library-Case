@@ -1,27 +1,16 @@
-# Case
+# Library Controller App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+## Description For That Application
 
-## Development server
+The purpose of this project is to make a small library application. It is a small Angular project where users and books can be controlled. I used Angular 16.0.4 version in my project. My Node.js version is 16.20.0 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## How we can run This Project ? 
 
-## Code scaffolding
+1. Clone this project in your local
+2. Install angular version `16.0.4` and node version `16.20.0`
+3. Open Terminal and run `npm install`
+4. Run `ng serve`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> **⚠️ Attention:** You need the use `http://localhost:4200/` this port. If you dont use it, API won't work because of cors.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+>**ℹ️ Note:** You should also use the Library Case API repo with this project. The APIs are located in that repo. 
