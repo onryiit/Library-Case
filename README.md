@@ -2,7 +2,19 @@
 
 ## Description For That Application
 
-The purpose of this project is to make a small library application. It is a small Angular project where users and books can be controlled. I used Angular 16.0.4 version in my project. My Node.js version is 16.20.0 
+The purpose of this project is to make a small library application. It is a small Angular project where users and books can be controlled. I used Angular 16.0.4 version in my project. My Node.js version is 16.20.0
+
+## Technologies Used in the Project
+
+1. `Angular(Version 16.0.4 )`
+2. `Typescript`
+3. `Html`
+4. `Scss`
+5. `Angular Material UI`
+6. `Tailwind`
+7. `Webpack`
+8. `Firebase Cloud`
+9. `Rest API`
 
 ## How we can run This Project ? 
 
