@@ -26,3 +26,8 @@ The purpose of this project is to make a small library application. It is a smal
 > **⚠️ Attention:** You need the use `http://localhost:4200/` this port. If you dont use it, API won't work because of cors.
 
 >**ℹ️ Note:** You should also use the Library Case API repo with this project. The APIs are located in that repo. 
+
+
+## Ideas for Development
+- [ ] Book adding and user adding pages can be created.
+- [ ] Scss can be improved by making some changes.
